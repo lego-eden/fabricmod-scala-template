@@ -1,8 +1,8 @@
-package legoeden.citygen
+package legoeden.examplemod
 
 import net.fabricmc.api.ClientModInitializer
 
-object CitygenClient extends ClientModInitializer:
+object ExampleModClient extends ClientModInitializer:
 	override def onInitializeClient(): Unit =
 		()
 		
