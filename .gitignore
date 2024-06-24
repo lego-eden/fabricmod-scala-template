@@ -41,3 +41,4 @@ replay_*.log
 
 # scala
 .metals
+.bloop
