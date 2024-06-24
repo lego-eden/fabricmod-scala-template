@@ -16,19 +16,18 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"legoeden.citygen.Citygen"
+			{
+				"adapter": "scala",
+				"value": "legoeden.citygen.Citygen"
+			}
 		],
 		"client": [
-			"legoeden.citygen.CitygenClient"
+			{
+				"adapter": "scala",
+				"value": "legoeden.citygen.CitygenClient"
+			}
 		]
 	},
-	"mixins": [
-		"citygen.mixins.json",
-		{
-			"config": "citygen.client.mixins.json",
-			"environment": "client"
-		}
-	],
 	"depends": {
 		"fabricloader": ">=0.15.11",
 		"minecraft": "~1.20.1",

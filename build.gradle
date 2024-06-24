@@ -1,6 +1,7 @@
 plugins {
 	id 'fabric-loom' version '1.7-SNAPSHOT'
 	id 'maven-publish'
+	id 'scala'
 }
 
 version = project.mod_version
@@ -11,11 +12,18 @@ base {
 }
 
 repositories {
+	mavenCentral()
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
+
+	maven {
+		name "dragonsPlusMavenReleases"
+		url "https://maven.dragons.plus/releases"
+	}
+
 }
 
 loom {
@@ -27,7 +35,6 @@ loom {
 			sourceSet sourceSets.client
 		}
 	}
-
 }
 
 dependencies {
@@ -38,7 +45,12 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	
+
+	// Scala support
+	modImplementation "dev.krysztal:krysztal-language-scala:3.0.0+scala.3.3.3"
+
+
+	implementation 'org.scala-lang:scala3-library_3:3.3.3'
 }
 
 processResources {
@@ -52,6 +64,9 @@ processResources {
 tasks.withType(JavaCompile).configureEach {
 	it.options.release = 17
 }
+
+// tasks.compileScala.classpath = sourceSets.main.compileClasspath
+// tasks.compileJava.classpath += files(sourceSets.main.scala.classesDirectory)
 
 java {
 	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
