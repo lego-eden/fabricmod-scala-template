@@ -8,4 +8,4 @@ object Citygen extends ModInitializer:
 	lazy val logger = LoggerFactory.getLogger("KMMO")
 
 	override def onInitialize(): Unit =
-		logger.info("Hi")
+		logger.info("!!!Hi this is a very long message!!!")
