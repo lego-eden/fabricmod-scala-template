@@ -19,4 +19,7 @@ I have experienced issues with having Metals active at the same time as the
 If you are experiencing issues with autocomplete not working or any other mysterious problem
 with vscode, then try disabling everything except for Metals.
 
+To actually get Metals working I find that I have to run `Metals: Import build` in the vscode command palette.
+Try this if Metals is not helpful.
+
 If you are new to modding or simply want a refresher then I suggest reading the [Fabric modding tutorial](https://docs.fabricmc.net/develop/getting-started/introduction-to-fabric-and-modding). If you are new to Scala I suggest reading the [Scala book](https://docs.scala-lang.org/scala3/book/introduction.html).
